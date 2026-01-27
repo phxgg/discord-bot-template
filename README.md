@@ -24,6 +24,9 @@ A Discord bot template to get you started with building your own bot quickly.
 
 ## Deploy commands
 
+> [!NOTE]
+> To deploy or undeploy commands, you will have to first build the project using `npm run build`.
+
 1. For a specific guild: `npm run deploy` (must have set the `GUILD_ID` variable in `.env`)
 2. For all guilds: `npm run deploy-global` (will take a while for discord to deploy)
 

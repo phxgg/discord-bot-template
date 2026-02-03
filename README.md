@@ -14,13 +14,13 @@ A Discord bot template to get you started with building your own bot quickly.
 
 ## Environment variables
 
-| Variable | Description | Default value | Required |
-| -------- | ----------- | ------------- | -------- |
-| `DISCORD_BOT_TOKEN` | Discord bot token | `null` | `true` |
-| `APPLICATION_ID` | Discord application ID | `null` | `true` |
-| `GUILD_ID` | Guild ID to deploy commands to | `null` | `false` if you deploy globally |
-| `APPLICATION_NAME` | Application name | `null` | `false` |
-| `NODE_ENV` | Node environment. Use `development` or `production` | `development` | `true` |
+| Variable            | Description                                         | Default value | Required                       |
+| ------------------- | --------------------------------------------------- | ------------- | ------------------------------ |
+| `DISCORD_BOT_TOKEN` | Discord bot token                                   | `null`        | `true`                         |
+| `APPLICATION_ID`    | Discord application ID                              | `null`        | `true`                         |
+| `GUILD_ID`          | Guild ID to deploy commands to                      | `null`        | `false` if you deploy globally |
+| `APPLICATION_NAME`  | Application name                                    | `null`        | `false`                        |
+| `NODE_ENV`          | Node environment. Use `development` or `production` | `development` | `true`                         |
 
 ## Deploy commands
 
@@ -31,6 +31,7 @@ A Discord bot template to get you started with building your own bot quickly.
 2. For all guilds: `npm run deploy:global` (will take a while for discord to deploy)
 
 **Undeploy**
+
 1. For a specific guild: `npm run undeploy` (must have set the `GUILD_ID` variable in `.env`)
 2. For all guilds: `npm run undeploy:global`
 
@@ -88,21 +89,21 @@ export default class HelloCommand implements IBaseCommand {
   data = new SlashCommandBuilder()
     .setName('hello')
     .setDescription('Responds with a greeting')
-    .addStringOption(option =>
+    .addStringOption((option) =>
       option
         .setName('choice')
         .setDescription('Choose an option')
-        .setAutocomplete(true)
+        .setAutocomplete(true),
     );
 
   async autocomplete(interaction: AutocompleteInteraction): Promise<void> {
     const focusedValue = interaction.options.getFocused();
     const choices = ['option1', 'option2', 'option3'];
-    const filtered = choices.filter(choice => 
-      choice.startsWith(focusedValue)
+    const filtered = choices.filter((choice) =>
+      choice.startsWith(focusedValue),
     );
     await interaction.respond(
-      filtered.map(choice => ({ name: choice, value: choice }))
+      filtered.map((choice) => ({ name: choice, value: choice })),
     );
   }
 

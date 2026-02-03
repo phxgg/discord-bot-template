@@ -1,7 +1,5 @@
-require('module-alias/register');
-require('dotenv').config();
-
-const { REST, Routes } = require('discord.js');
+import 'dotenv/config';
+import { REST, Routes } from 'discord.js';
 
 const guildId = process.env.GUILD_ID || process.argv[2];
 

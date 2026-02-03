@@ -1,6 +1,6 @@
 import { ActivityType, Client, Events } from 'discord.js';
 
-import logger from '@/lib/logger';
+import logger from '@/lib/logger.js';
 
 export default {
   name: Events.ClientReady,

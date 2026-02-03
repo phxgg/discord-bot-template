@@ -1,6 +1,6 @@
 import { EmbedBuilder } from 'discord.js';
 
-import { MessageType } from '@/types/MessageType';
+import { MessageType } from '@/types/MessageType.js';
 
 /**
  * Creates an embed message with the given message type and message body.

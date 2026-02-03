@@ -38,7 +38,11 @@ A Discord bot template to get you started with building your own bot quickly.
 
 To create a new slash command for the Discord bot, follow these steps:
 
-1. **Create a new command file** in the appropriate subdirectory under `src/commands/`. For example, to create a "hello" command, create `src/commands/general/hello.ts`.
+1. **Create a new command file** in the appropriate subdirectory under `src/commands/`. For example, to create a `/hello` command, create `src/commands/general/hello.ts`.
+
+> [!IMPORTANT]
+> Make sure the command file is located in a subdirectory of `src/commands/` to ensure it is discovered by the bot.
+> The subdirectory can be named whatever you like, and will **not** affect the command name.
 
 2. **Implement the command class** that follows the `IBaseCommand` interface:
 

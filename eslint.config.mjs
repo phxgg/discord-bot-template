@@ -17,7 +17,7 @@ const configs = [
       'dist/*',
       '**/node_modules',
       'scripts/*',
-      '**/prettier.config.js',
+      '**/prettier.config.mjs',
       '**/eslint.config.mjs',
     ],
   },
